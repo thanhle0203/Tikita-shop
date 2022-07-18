@@ -8,14 +8,16 @@ import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 
 const Container = styled.div`
   height: 60px;
-  background-color: none;
+  background-color: grey;
 `;
 
 const Wrapper = styled.div`
-  padding: 10px 20px;
+  padding: 0px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  text-align: center;
+
 `;
 
 const Left = styled.div`
