@@ -2,6 +2,7 @@ import styled from 'styled-components'
 import React, { useState } from 'react'
 import ArrowLeftOutlinedIcon from '@mui/icons-material/ArrowLeftOutlined';
 import ArrowRightOutlinedIcon from '@mui/icons-material/ArrowRightOutlined';
+import { sliderItems } from '../data';
 
 const Container = styled.div`
   width: 100%;
@@ -33,7 +34,8 @@ const Arrow = styled.div`
 const Wrapper = styled.div`
   height: 100%;
   display: flex;
-  transform: translateX(0vw);
+  transition: all 1.5s ease;
+  transform: translateX(${(props) => props.slideIndex * -100}vw);
 `
 
 const Slide = styled.div`
@@ -86,6 +88,11 @@ const Slider = () => {
   const [slideIndex, setSlideIndex] = useState(0);
   const handleClick = (direction) => {
     
+    if (direction === "left") {
+      setSlideIndex(slideIndex > 0 ? slideIndex-1: 2);
+    } else if (direction == "right") {
+      setSlideIndex(slideIndex < 2 ? slideIndex+1 : 0);
+    }
   }
 
   return (
@@ -93,48 +100,20 @@ const Slider = () => {
       <Arrow direction="left" onClick={() => handleClick("left")} >
         <ArrowLeftOutlinedIcon />
       </Arrow>
-      <Wrapper>
-        <Slide bg="f5fafd">
+      <Wrapper slideIndex={slideIndex}>
+        {sliderItems.map((item) => (
+          <Slide bg={item.bg}>
           <ImgContainer>
-            <Image src="https://ss7.vzw.com/is/image/VerizonWireless/apple-iphone-13-pro-max-sierra-blue?fmt=pjpg" />
+            <Image src={item.img} />
           </ImgContainer>
         
           <InfoContainer>
-            <Title>Iphone 13 Pro Max Sale!!!</Title>
-            <Desc>
-              iPhone 13 Pro Max are currently available in sierra blue, graphite, gold, and silver, and will be available in the new alpine green in 128GB, 256GB, 512GB, and 1TB storage options, starting at $999 (US) and $1,099 (US) respectively.
-            </Desc>
+            <Title>{item.title}</Title>
+            <Desc>{item.desc}</Desc>
             <Button>Shop Now</Button>
           </InfoContainer>
         </Slide>
-
-        <Slide bg="fbf0f4">
-          <ImgContainer>
-            <Image src="https://pisces.bbystatic.com/image2/BestBuy_US/images/products/4264/4264701_sd.jpg" />
-          </ImgContainer>
-        
-          <InfoContainer>
-            <Title>Ipad 13 Pro Max Sale!!!</Title>
-            <Desc>
-              iPad Pro features the powerful Apple M1 chip for next-level performance and all-day battery life.³ An immersive 12.9-inch Liquid Retina XDR display for viewing and editing HDR photos and videos.¹ And a front camera with Center Stage keeps you in frame automatically during video calls. iPad Pro has pro cameras and a LiDAR Scanner for stunning photos, videos, and immersive AR. Thunderbolt for connecting to high-performance accessories. And you can add Apple Pencil for note-taking, drawing, and marking up documents, and the Magic Keyboard for a responsive typing experience and trackpad.
-            </Desc>
-            <Button>Shop Now</Button>
-          </InfoContainer>
-        </Slide>
-
-        <Slide bg="fcf1ed">
-          <ImgContainer>
-            <Image src="https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6450/6450853_sd.jpg" />
-          </ImgContainer>
-        
-          <InfoContainer>
-            <Title>Macbook Pro Sale!!!</Title>
-            <Desc>         
-              The new MacBook Pro delivers game-changing performance for pro users. Choose the powerful M1 Pro or the even more powerful M1 Max to supercharge pro-level workflows while getting amazing battery life.¹ And with an immersive 16-inch Liquid Retina XDR display and an array of pro ports, you can do more than ever with MacBook Pro.²
-            </Desc>
-            <Button>Shop Now</Button>
-          </InfoContainer>
-        </Slide>
+        ))}
 
       </Wrapper>
       <Arrow direction="right" onClick={() => handleClick("right")}>
