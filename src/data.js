@@ -15,7 +15,7 @@ export const sliderItems = [
   },
   {
     id: 3,
-    img: "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6450/6450853_sd.jpg",
+    img: "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6482/6482181cv14d.jpg",
     title: "Macbook Pro Sale!!!",
     desc: "The new MacBook Pro delivers game-changing performance for pro users. Choose the powerful M1 Pro or the even more powerful M1 Max to supercharge pro-level workflows while getting amazing battery life.¹ And with an immersive 16-inch Liquid Retina XDR display and an array of pro ports, you can do more than ever with MacBook Pro.²",
     bg: "f5fafd",
@@ -26,17 +26,44 @@ export const sliderItems = [
 export const categories = [
   {
     id: 1,
-    img: "",
+    img: "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcTJjfyW1auSwDna5CUF2b6b5xA4zCGu_RzOpyCULk7xxXFIq5mGuvWJD5N9bvtWGQp5enRLB8vn0qEcJRF061xFCEYXJPZi",
     title: "Apple Products",
   },
   {
     id: 2,
-    img: "",
-    title: "Samsum Products",
+    img: "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcRyp6xTUlWUcLjxZeb5c8JkvxAcwk9kMHUXkLP32W-4pydA3dZE",
+    title: "Samsumg Products",
   },
   {
     id: 3,
-    img: "",
-    title: "Microsoft Products",
+    img: "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6501/6501378_sd.jpg",
+    title: "Google Products",
+  }
+]
+
+export const popularProducts = [
+  {
+    id: 1,
+    img: "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/5985/5985620_sd.jpg"
+  },
+  {
+    id: 2,
+    img: "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6489/6489522_sd.jpg"
+  },
+  {
+    id: 3,
+    img: "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6450/6450820_sd.jpg"
+  },
+  {
+    id: 4,
+    img: "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6397/6397392_rd.jpg"
+  },
+  {
+    id: 5,
+    img: "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6492/6492906cv11d.jpg"
+  },
+  {
+    id: 6,
+    img: "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6464/6464584_sd.jpg"
   }
 ]
