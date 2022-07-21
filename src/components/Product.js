@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import React from 'react'
+import { useEffect } from 'react';
 
 import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
 import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
@@ -51,8 +52,6 @@ const Image = styled.img`
 
 `
 
-
-
 const Icon = styled.div`
   width: 40px;
   height: 40px;
@@ -71,10 +70,15 @@ const Icon = styled.div`
 `
 
 const Product = ({item}) => {
+
+  const useEffect = () => {
+    console.log(item);
+  }
+
   return (
     <Container>
       <Circle />
-      <Image src={item.img} />
+      <Image src={ item && item.im ? item.img : "https://sometestimage.com/test.jpg"} />
       <Info>
         <Icon>
           <ShoppingCartOutlinedIcon />
