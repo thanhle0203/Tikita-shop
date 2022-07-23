@@ -7,9 +7,11 @@ import PinterestIcon from '@mui/icons-material/Pinterest';
 import MapIcon from '@mui/icons-material/Map';
 import ContactPhoneIcon from '@mui/icons-material/ContactPhone';
 import MarkEmailReadIcon from '@mui/icons-material/MarkEmailRead';
+import { mobile } from "../responsive";
 
 const Container = styled.div`
   display: flex;
+  ${mobile({width: "column"})}
 `
 const Left = styled.div`
   flex: 1;
@@ -40,6 +42,7 @@ const SocialIcon = styled.div`
 const Center = styled.div`
   flex: 1;
   padding: 20px;
+  ${mobile({display: "none"})}
 `
 const Title = styled.h3`
   margin-bottom: 30px;
@@ -59,6 +62,7 @@ const ListItem = styled.li`
 const Right = styled.div`
   flex: 1;
   padding: 20px;
+  ${mobile({backgroundColor: "#eee"})}
 `
 const ContactItem = styled.div`
   margin-bottom: 20px;
